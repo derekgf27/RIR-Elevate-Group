@@ -13,16 +13,22 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <div class="logo-icon">R</div>
-                <span class="logo-text">RAFAEL IRIZARRY</span>
+                <img src="BLANCO NO BACK.png" alt="ELEVATE GROUP Logo" class="navbar-logo">
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Inicio</a></li>
-                <li><a href="#about" class="nav-link">Sobre Mí</a></li>
-                <li><a href="#services" class="nav-link">Servicios</a></li>
-                <li><a href="#leadership" class="nav-link">Liderazgo</a></li>
-                <li><a href="#contact" class="nav-link">Contacto</a></li>
+                <li><a href="#home" class="nav-link" data-es="Inicio" data-en="Home">Inicio</a></li>
+                <li><a href="#about" class="nav-link" data-es="Sobre Mí" data-en="About">Sobre Mí</a></li>
+                <li><a href="#services" class="nav-link" data-es="Servicios" data-en="Services">Servicios</a></li>
+                <li><a href="#leadership" class="nav-link" data-es="ELEVATE" data-en="ELEVATE">ELEVATE</a></li>
+                <li><a href="#faq" class="nav-link" data-es="FAQ" data-en="FAQ">FAQ</a></li>
+                <li><a href="#contact" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a></li>
             </ul>
+            <div class="nav-actions">
+                <button class="language-switcher" id="languageSwitcher">
+                    <i class="fas fa-globe"></i>
+                    <span class="current-lang">ES</span>
+                </button>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -35,34 +41,34 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">RAFAEL IRIZARRY</h1>
-                <h2 class="hero-subtitle">Consultor de Negocios</h2>
-                <p class="hero-description">
+                <h1 class="hero-title" data-lang="hero-title">RAFAEL IRIZARRY</h1>
+                <h2 class="hero-subtitle" data-lang="hero-subtitle">Consultor de Negocios</h2>
+                <p class="hero-description" data-lang="hero-description">
                     Hombre de negocios, persona de influencia, recurso profesional de administración de empresas.<br>
                     <strong>Auténtico, moderno, elegante y energético.</strong>
                 </p>
-                <p class="hero-cta">I help you outgrow your business.</p>
+                <p class="hero-cta" data-lang="hero-cta">I help you outgrow your business.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Consultar Ahora</a>
-                    <a href="#services" class="btn btn-secondary">Ver Servicios</a>
+                    <a href="#contact" class="btn btn-primary" data-lang="btn-consult">Consultar Ahora</a>
+                    <a href="#services" class="btn btn-secondary" data-lang="btn-services">Ver Servicios</a>
                 </div>
             </div>
-            <div class="hero-image">
+            <!-- <div class="hero-image">
                 <div class="hero-card">
                     <div class="card-header">
                         <div class="card-logo">R</div>
                         <span>@rafaelirizarrypr</span>
                     </div>
                     <div class="card-content">
-                        <h3>Operational Excellence</h3>
-                        <div class="service-icons">
+                        <h3>ELEVATE</h3>
+                        <!-- <div class="service-icons">
                             <i class="fas fa-industry"></i>
                             <i class="fas fa-chart-line"></i>
                             <i class="fas fa-users"></i>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="hero-scroll">
             <i class="fas fa-chevron-down"></i>
@@ -73,12 +79,12 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Sobre Rafael Irizarry</h2>
-                <p class="section-subtitle">Experiencia, Liderazgo y Excelencia Operacional</p>
+                <h2 class="section-title" data-lang="about-title">Sobre Rafael Irizarry</h2>
+                <p class="section-subtitle" data-lang="about-subtitle">Experiencia, Liderazgo y Excelencia Operacional</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="lead">
+                    <p class="lead" data-lang="about-lead">
                         Como consultor especializado en excelencia operacional, hospitalidad y gestión industrial, 
                         Rafael Irizarry ha desarrollado una metodología única que transforma negocios y cultiva 
                         entornos de crecimiento sostenible.
@@ -86,33 +92,33 @@
                     <div class="about-features">
                         <div class="feature">
                             <i class="fas fa-trophy"></i>
-                            <h4>Experiencia Comprobada</h4>
-                            <p>Años de experiencia en transformación empresarial</p>
+                            <h4 data-lang="about-feature1-title">Experiencia Comprobada</h4>
+                            <p data-lang="about-feature1-desc">Años de experiencia en transformación empresarial</p>
                         </div>
                         <div class="feature">
                             <i class="fas fa-handshake"></i>
-                            <h4>Enfoque Personalizado</h4>
-                            <p>Estrategias adaptadas a cada cliente</p>
+                            <h4 data-lang="about-feature2-title">Enfoque Personalizado</h4>
+                            <p data-lang="about-feature2-desc">Estrategias adaptadas a cada cliente</p>
                         </div>
                         <div class="feature">
                             <i class="fas fa-rocket"></i>
-                            <h4>Resultados Medibles</h4>
-                            <p>Crecimiento comprobado y sostenible</p>
+                            <h4 data-lang="about-feature3-title">Resultados Medibles</h4>
+                            <p data-lang="about-feature3-desc">Crecimiento comprobado y sostenible</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-stats">
                     <div class="stat">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Años de Experiencia</div>
+                        <div class="stat-number" data-lang="about-stat1">15+</div>
+                        <div class="stat-label" data-lang="about-stat1-label">Años de Experiencia</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Empresas Transformadas</div>
+                        <div class="stat-number" data-lang="about-stat2">50+</div>
+                        <div class="stat-label" data-lang="about-stat2-label">Empresas Transformadas</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">95%</div>
-                        <div class="stat-label">Satisfacción del Cliente</div>
+                        <div class="stat-number" data-lang="about-stat3">95%</div>
+                        <div class="stat-label" data-lang="about-stat3-label">Satisfacción del Cliente</div>
                     </div>
                 </div>
             </div>
@@ -123,106 +129,100 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Servicios de Consultoría</h2>
-                <p class="section-subtitle">Soluciones integrales para el crecimiento empresarial</p>
+                <h2 class="section-title" data-lang="services-title">Servicios de Consultoría</h2>
+                <p class="section-subtitle" data-lang="services-subtitle">Soluciones integrales para el crecimiento empresarial</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 data-lang="service1-title">Excelencia Operacional</h3>
+                        <i class="fas fa-chevron-down service-toggle"></i>
                     </div>
-                    <h3>Excelencia Operacional</h3>
-                    <p>Optimización de procesos, mejora continua y eficiencia operacional para maximizar la productividad y reducir costos.</p>
-                    <ul class="service-features">
-                        <li>Análisis de procesos</li>
-                        <li>Implementación de mejoras</li>
-                        <li>Medición de resultados</li>
-                    </ul>
+                    <div class="service-content">
+                        <p data-lang="service1-desc">Optimización de procesos, mejora continua y eficiencia operacional para maximizar la productividad y reducir costos.</p>
+                        <ul class="service-features">
+                            <li data-lang="service1-feature1">Análisis de procesos</li>
+                            <li data-lang="service1-feature2">Implementación de mejoras</li>
+                            <li data-lang="service1-feature3">Medición de resultados</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-concierge-bell"></i>
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-concierge-bell"></i>
+                        </div>
+                        <h3 data-lang="service2-title">Hospitalidad</h3>
+                        <i class="fas fa-chevron-down service-toggle"></i>
                     </div>
-                    <h3>Hospitalidad</h3>
-                    <p>Desarrollo de estrategias de servicio al cliente y experiencias que generen lealtad y crecimiento sostenible.</p>
-                    <ul class="service-features">
-                        <li>Estrategias de servicio</li>
-                        <li>Entrenamiento de equipos</li>
-                        <li>Experiencias del cliente</li>
-                    </ul>
+                    <div class="service-content">
+                        <p data-lang="service2-desc">Desarrollo de estrategias de servicio al cliente y experiencias que generen lealtad y crecimiento sostenible.</p>
+                        <ul class="service-features">
+                            <li data-lang="service2-feature1">Estrategias de servicio</li>
+                            <li data-lang="service2-feature2">Experiencias del cliente</li>
+                            <li data-lang="service2-feature3">Programas de lealtad</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-industry"></i>
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3 data-lang="service3-title">Gestión Industrial</h3>
+                        <i class="fas fa-chevron-down service-toggle"></i>
                     </div>
-                    <h3>Gestión Industrial</h3>
-                    <p>Consultoría especializada en manufactura, logística y operaciones industriales para empresas de todos los tamaños.</p>
-                    <ul class="service-features">
-                        <li>Optimización de producción</li>
-                        <li>Gestión de inventarios</li>
-                        <li>Control de calidad</li>
-                    </ul>
+                    <div class="service-content">
+                        <p data-lang="service3-desc">Optimización de operaciones industriales, gestión de recursos y mejora de procesos de producción.</p>
+                        <ul class="service-features">
+                            <li data-lang="service3-feature1">Optimización de procesos</li>
+                            <li data-lang="service3-feature2">Gestión de recursos</li>
+                            <li data-lang="service3-feature3">Control de calidad</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Leadership Principles Section -->
-    <section id="leadership" class="leadership">
+    <!-- Elevate Steps Section -->
+    <section id="leadership" class="elevate-steps">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Principios de Liderazgo</h2>
-                <p class="section-subtitle">Los 5 pilares fundamentales del liderazgo efectivo</p>
+                <h2 class="section-title" data-lang="elevate-title">First 3 Steps to ELEVATE</h2>
+                <p class="section-subtitle" data-lang="elevate-subtitle">Los pasos fundamentales para elevar tu negocio al siguiente nivel</p>
             </div>
-            <div class="principles-grid">
-                <div class="principle-card" data-number="1">
-                    <div class="principle-number">1</div>
-                    <div class="principle-content">
-                        <h3>INSPIRA Y MOTIVA</h3>
-                        <p>Liderar con el ejemplo, inspirando a otros a alcanzar su máximo potencial y motivando equipos hacia objetivos comunes.</p>
-                    </div>
-                    <div class="principle-icon">
-                        <i class="fas fa-fire"></i>
+            <div class="elevate-trajectory">
+                <div class="hover-progress-container">
+                    <div class="hover-progress-bar">
+                        <div class="hover-progress-fill"></div>
                     </div>
                 </div>
-                <div class="principle-card" data-number="2">
-                    <div class="principle-number">2</div>
-                    <div class="principle-content">
-                        <h3>TOMA DECISIONES DIFÍCILES</h3>
-                        <p>Enfrentar los desafíos con valentía, tomando decisiones estratégicas que impulsen el crecimiento y la innovación.</p>
-                    </div>
-                    <div class="principle-icon">
-                        <i class="fas fa-chess"></i>
+                
+                <div class="step-card step-1" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 data-lang="elevate-step1-title">Conoce tu Producto</h3>
+                        <p data-lang="elevate-step1-desc">Comprende profundamente tu producto o servicio, sus fortalezas, debilidades y valor único que ofrece al mercado.</p>
                     </div>
                 </div>
-                <div class="principle-card" data-number="3">
-                    <div class="principle-number">3</div>
-                    <div class="principle-content">
-                        <h3>ESCUCHA ACTIVAMENTE</h3>
-                        <p>Desarrollar empatía y comprensión genuina, escuchando activamente a clientes, empleados y stakeholders.</p>
-                    </div>
-                    <div class="principle-icon">
-                        <i class="fas fa-ear-listen"></i>
+                
+                <div class="step-card step-2" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 data-lang="elevate-step2-title">Conoce tu Mercado</h3>
+                        <p data-lang="elevate-step2-desc">Analiza tu mercado objetivo, identifica necesidades, competencia y oportunidades de crecimiento.</p>
                     </div>
                 </div>
-                <div class="principle-card" data-number="4">
-                    <div class="principle-number">4</div>
-                    <div class="principle-content">
-                        <h3>FOMENTA UN AMBIENTE DE CRECIMIENTO</h3>
-                        <p>Crear culturas organizacionales que promuevan el desarrollo personal y profesional continuo.</p>
-                    </div>
-                    <div class="principle-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                </div>
-                <div class="principle-card" data-number="5">
-                    <div class="principle-number">5</div>
-                    <div class="principle-content">
-                        <h3>ACTÚA CON INTEGRIDAD</h3>
-                        <p>Mantener los más altos estándares éticos en todas las decisiones y acciones, construyendo confianza y credibilidad.</p>
-                    </div>
-                    <div class="principle-icon">
-                        <i class="fas fa-shield-alt"></i>
+                
+                <div class="step-card step-3" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 data-lang="elevate-step3-title">Conoce tu Proceso</h3>
+                        <p data-lang="elevate-step3-desc">Optimiza tus procesos operativos para maximizar eficiencia, calidad y rentabilidad en cada etapa.</p>
                     </div>
                 </div>
             </div>
@@ -233,35 +233,44 @@
     <section class="content-pillars">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Áreas de Especialización</h2>
-                <p class="section-subtitle">Conocimiento profundo en múltiples disciplinas</p>
+                <h2 class="section-title" data-lang="pillars-title">Áreas de Especialización</h2>
+                <p class="section-subtitle" data-lang="pillars-subtitle">Conocimiento profundo en múltiples disciplinas</p>
             </div>
             <div class="pillars-grid">
                 <div class="pillar">
-                    <h3>Liderazgo</h3>
+                    <div class="pillar-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 data-lang="pillar1-title">Liderazgo</h3>
                     <div class="pillar-content">
                         <ul>
-                            <li>Temas de liderazgo</li>
-                            <li>Empresarismo</li>
+                            <li data-lang="pillar1-item1">Temas de liderazgo</li>
+                            <li data-lang="pillar1-item2">Empresarismo</li>
                         </ul>
                     </div>
                 </div>
                 <div class="pillar">
-                    <h3>Consulting Group</h3>
+                    <div class="pillar-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 data-lang="pillar2-title">Grupo de Consultoría</h3>
                     <div class="pillar-content">
                         <ul>
-                            <li>Consultorías especializadas</li>
-                            <li>Estrategias para empresas</li>
+                            <li data-lang="pillar2-item1">Consultorías especializadas</li>
+                            <li data-lang="pillar2-item2">Estrategias para empresas</li>
                         </ul>
                     </div>
                 </div>
                 <div class="pillar">
-                    <h3>Lifestyle</h3>
+                    <div class="pillar-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 data-lang="pillar3-title">Estilo De Vida</h3>
                     <div class="pillar-content">
                         <ul>
-                            <li>Filantropía</li>
-                            <li>Motivación</li>
-                            <li>Frases inspiradoras</li>
+                            <li data-lang="pillar3-item1">Filantropía</li>
+                            <li data-lang="pillar3-item2">Motivación</li>
+                            <li data-lang="pillar3-item3">Frases inspiradoras</li>
                         </ul>
                     </div>
                 </div>
@@ -273,13 +282,13 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Consultar con un Experto</h2>
-                <p class="section-subtitle">Transforma tu negocio hoy mismo</p>
+                <h2 class="section-title" data-lang="contact-title">Consulta con un Experto</h2>
+                <p class="section-subtitle" data-lang="contact-subtitle">Transforma tu negocio hoy mismo</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Conecta con Rafael</h3>
-                    <p>Listo para llevar tu empresa al siguiente nivel? Contáctame para una consulta personalizada.</p>
+                    <h3 data-lang="contact-info-title">Conecta con Rafael</h3>
+                    <p data-lang="contact-info-desc">Listo para llevar tu empresa al siguiente nivel? Contáctame para una consulta personalizada.</p>
                     <div class="contact-methods">
                         <div class="contact-method">
                             <i class="fab fa-linkedin"></i>
@@ -287,7 +296,7 @@
                         </div>
                         <div class="contact-method">
                             <i class="fab fa-instagram"></i>
-                            <span>@rafaelirizarrypr</span>
+                            <span>Instagram</span>
                         </div>
                         <div class="contact-method">
                             <i class="fas fa-envelope"></i>
@@ -303,28 +312,99 @@
                 <div class="contact-form">
                     <form>
                         <div class="form-group">
-                            <input type="text" placeholder="Nombre" required>
+                            <input type="text" placeholder="Nombre" required data-lang="contact-name-placeholder">
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email" required>
+                            <input type="email" placeholder="Email" required data-lang="contact-email-placeholder">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Empresa">
+                            <input type="text" placeholder="Empresa" data-lang="contact-company-placeholder">
                         </div>
                         <div class="form-group">
-                            <select required>
-                                <option value="">Tipo de Consultoría</option>
-                                <option value="operational">Excelencia Operacional</option>
-                                <option value="hospitality">Hospitalidad</option>
-                                <option value="industrial">Gestión Industrial</option>
-                                <option value="general">Consulta General</option>
+                            <select id="consultoria" name="consultoria" required aria-label="Tipo de Consultoría">
+                                <option value="" data-lang="contact-service-placeholder">Tipo de Consultoría</option>
+                                <option value="operational" data-lang="contact-service-operational">Excelencia Operacional</option>
+                                <option value="hospitality" data-lang="contact-service-hospitality">Hospitalidad</option>
+                                <option value="industrial" data-lang="contact-service-industrial">Gestión Industrial</option>
+                                <option value="general" data-lang="contact-service-general">Consulta General</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Mensaje" rows="5" required></textarea>
+                            <textarea placeholder="Mensaje" rows="5" required data-lang="contact-message-placeholder"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar Consulta</button>
+                        <button type="submit" class="btn btn-primary" data-lang="contact-submit">Enviar Consulta</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang="faq-title">Preguntas Frecuentes</h2>
+                <p class="section-subtitle" data-lang="faq-subtitle">Respuestas a las consultas más comunes</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-lang="faq1-question">¿Qué servicios de consultoría ofreces?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang="faq1-answer">Ofrezco consultoría especializada en tres áreas principales: Excelencia Operacional (optimización de procesos y mejora continua), Hospitalidad (desarrollo de estrategias de servicio al cliente), y Gestión Industrial (manufactura, logística y operaciones industriales).</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-lang="faq2-question">¿Cómo funciona el proceso de consultoría?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang="faq2-answer">El proceso comienza con una consulta inicial gratuita donde analizamos las necesidades específicas de tu empresa. Luego desarrollamos un plan personalizado, implementamos las mejoras y realizamos un seguimiento continuo para asegurar resultados sostenibles.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-lang="faq3-question">¿Qué tamaño de empresas trabajas?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang="faq3-answer">Trabajo con empresas de todos los tamaños, desde startups hasta corporaciones establecidas. Mi metodología se adapta a las necesidades específicas de cada organización, independientemente de su tamaño o industria.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-lang="faq4-question">¿Cuánto tiempo toma ver resultados?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang="faq4-answer">Los resultados iniciales suelen ser visibles en las primeras 4-6 semanas, con mejoras significativas en 3-6 meses. El tiempo exacto depende del alcance del proyecto y la complejidad de los cambios implementados.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-lang="faq5-question">¿Ofreces consultoría remota o presencial?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang="faq5-answer">Ofrezco ambos formatos según las necesidades del proyecto. La consultoría remota es ideal para análisis y planificación, mientras que la presencial es más efectiva para implementación y entrenamiento de equipos.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-lang="faq6-question">¿Cómo puedo contactarte para una consulta?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-lang="faq6-answer">Puedes contactarme a través del formulario en esta página, por LinkedIn, o Instagram (@rafaelirizarrypr). También puedes enviarme un email directamente. Respondo a todas las consultas dentro de 24 horas.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -339,26 +419,26 @@
                         <div class="logo-icon">R</div>
                         <span>RAFAEL IRIZARRY</span>
                     </div>
-                    <p>Consultor de Negocios especializado en Excelencia Operacional, Hospitalidad y Gestión Industrial.</p>
+                    <p data-lang="footer-description">Consultor de Negocios especializado en Excelencia Operacional, Hospitalidad y Gestión Industrial.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Enlaces Rápidos</h4>
+                    <h4 data-lang="footer-links-title">Enlaces Rápidos</h4>
                     <ul>
-                        <li><a href="#about">Sobre Mí</a></li>
-                        <li><a href="#services">Servicios</a></li>
-                        <li><a href="#leadership">Liderazgo</a></li>
-                        <li><a href="#contact">Contacto</a></li>
+                        <li><a href="#about" data-lang="footer-link-about">Sobre Mí</a></li>
+                        <li><a href="#services" data-lang="footer-link-services">Servicios</a></li>
+                        <li><a href="#leadership" data-lang="footer-link-leadership">ELEVATE</a></li>
+                        <li><a href="#contact" data-lang="footer-link-contact">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
-                    <h4>Contacto</h4>
-                    <p><i class="fab fa-instagram"></i> @rafaelirizarrypr</p>
-                    <p><i class="fab fa-linkedin"></i> LinkedIn</p>
+                    <h4 data-lang="footer-contact-title">Contacto</h4>
+                    <p><i class="fab fa-instagram"></i> <span data-lang="footer-instagram">Instagram</span></p>
+                    <p><i class="fab fa-linkedin"></i> <span data-lang="footer-linkedin">LinkedIn</span></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Rafael Irizarry. Todos los derechos reservados.</p>
-                <p class="credit">Diseño por Louise's Social Media Management EST. 2020</p>
+                <p data-lang="footer-copyright">&copy; 2025 Rafael Irizarry. Todos los derechos reservados.</p>
+                <p class="credit" data-lang="footer-credit">Pagina hecha por Derek P. Garcia Ferrer</p>
             </div>
         </div>
     </footer>
