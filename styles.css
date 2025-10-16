@@ -206,7 +206,7 @@ p {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(180deg, var(--gray-medium) 10%, var(--black) 100%);
+    background: linear-gradient(180deg, var(--gray-medium) 10%, var(--black) 90%);
     display: flex;
     align-items: center;
     position: relative;
@@ -512,7 +512,7 @@ section {
 
 /* Services Section */
 .services {
-    background: linear-gradient(180deg, var(--black) 20%, var(--primary-blue) 100%);
+    background: linear-gradient(180deg, var(--black) 0%, var(--primary-blue) 100%);
 }
 
 .services-grid {
@@ -621,7 +621,7 @@ section {
 
 /* Elevate Steps Section */
 .elevate-steps {
-    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--black) 80%);
+    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--black) 100%);
     color: var(--white);
     position: relative;
     overflow: hidden;
@@ -766,7 +766,7 @@ section {
 
 /* FAQ Section */
 .faq {
-    background: linear-gradient(180deg, var(--black) 20%, var(--primary-blue) 100%);
+    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--black) 90%);
     color: var(--white);
 }
 
@@ -839,7 +839,7 @@ section {
 
 /* Content Pillars Section */
 .content-pillars {
-    background: linear-gradient(180deg, var(--black) 0%, var(--primary-blue) 100%);
+    background: linear-gradient(180deg, var(--black) 0%, var(--primary-blue) 90%);
     position: relative;
     overflow: hidden;
 }
@@ -851,13 +851,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, 
-        rgba(255, 215, 0, 0.1) 0%, 
-        rgba(0, 0, 255, 0.1) 25%, 
-        rgba(135, 206, 235, 0.1) 50%, 
-        rgba(255, 215, 0, 0.1) 75%, 
-        rgba(0, 0, 255, 0.1) 100%);
-    background-size: 400% 400%;
+    background: rgba(255, 215, 0, 0.05);
     z-index: 0;
 }
 
@@ -1031,7 +1025,7 @@ section {
 
 /* Contact Section */
 .contact {
-    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--black) 100%);
+    background: linear-gradient(180deg, var(--black) 0%, var(--primary-blue) 90%);
     color: var(--white);
 }
 
