@@ -1231,7 +1231,7 @@ section {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: var(--white);
+        background-color: var(--gray-dark);
         width: 100%;
         text-align: center;
         transition: 0.3s;
