@@ -440,7 +440,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'service3-feature3': 'Control de calidad',
             
             // Elevate Section
-            'elevate-title': 'First 3 Steps to ELEVATE',
+            'elevate-title': 'Primeros 3 Pasos para ELEVAR',
             'elevate-subtitle': 'Los pasos fundamentales para elevar tu negocio al siguiente nivel',
             'elevate-step1-title': 'Conoce tu Producto',
             'elevate-step1-desc': 'Comprende profundamente tu producto o servicio, sus fortalezas, debilidades y valor único que ofrece al mercado.',
