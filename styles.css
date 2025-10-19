@@ -1220,6 +1220,11 @@ section {
     font-size: 0.9rem;
 }
 
+/* Hide mobile language switcher on desktop */
+.mobile-language-switcher {
+    display: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
