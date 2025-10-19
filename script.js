@@ -381,6 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Language Switcher Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const languageSwitcher = document.getElementById('languageSwitcher');
+    const mobileLanguageSwitcher = document.getElementById('mobileLanguageSwitcher');
     const currentLangSpan = document.querySelector('.current-lang');
     let currentLanguage = 'es'; // Default to Spanish
     
@@ -636,7 +637,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function updateLanguage(lang) {
         currentLanguage = lang;
-        currentLangSpan.textContent = lang.toUpperCase();
+        
+        // Update both language switchers
+        const allCurrentLangSpans = document.querySelectorAll('.current-lang');
+        allCurrentLangSpans.forEach(span => {
+            span.textContent = lang.toUpperCase();
+        });
         
         // Update navigation links
         document.querySelectorAll('.nav-link').forEach(link => {
@@ -671,4 +677,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const newLang = currentLanguage === 'es' ? 'en' : 'es';
         updateLanguage(newLang);
     });
+    
+    // Toggle language on mobile button click
+    if (mobileLanguageSwitcher) {
+        mobileLanguageSwitcher.addEventListener('click', function() {
+            const newLang = currentLanguage === 'es' ? 'en' : 'es';
+            updateLanguage(newLang);
+        });
+    }
 });
