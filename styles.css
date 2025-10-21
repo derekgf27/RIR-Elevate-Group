@@ -1188,6 +1188,24 @@ section {
     margin-bottom: 1rem;
 }
 
+.footer-contact p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-contact a {
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-contact a:hover {
+    color: var(--brand-yellow);
+    transform: translateX(5px);
+}
+
 .footer-links ul {
     list-style: none;
 }
