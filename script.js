@@ -93,39 +93,151 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Contact form handling
-    const contactForm = document.querySelector('.contact-form form');
+    // Contact form handling with EmailJS
+    const contactForm = document.getElementById('consultationForm');
+    const formStatus = document.getElementById('formStatus');
+    
+    // Check if EmailJS is properly configured
+    const isEmailJSConfigured = () => {
+        return typeof emailjs !== 'undefined' && 
+               emailjs.init && 
+               window.emailjsPublicKey && 
+               window.emailjsServiceId && 
+               window.emailjsTemplateId &&
+               window.emailjsClientTemplateId;
+    };
+    
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form data
             const formData = new FormData(this);
-            const formObject = {};
-            formData.forEach((value, key) => {
-                formObject[key] = value;
-            });
+            const formDataObj = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                company: formData.get('company'),
+                service_type: formData.get('consultoria'),
+                message: formData.get('message')
+            };
             
-            // Simulate form submission
+            // Get submit button and status element
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
             
-            submitButton.textContent = 'Enviando...';
+            // Show loading state
+            submitButton.textContent = 'Sending...';
             submitButton.disabled = true;
+            formStatus.style.display = 'none';
             
-            setTimeout(() => {
-                submitButton.textContent = 'Enviado!';
-                submitButton.style.background = '#28a745';
+            // Check if EmailJS is configured
+            if (!isEmailJSConfigured()) {
+                // Fallback: Show form data and provide contact info
+                console.log('Form submission data:', formDataObj);
                 
-                // Reset form
-                this.reset();
+                // Create a mailto link as fallback
+                const subject = `Consultation Request from ${formDataObj.name}`;
+                const body = `Name: ${formDataObj.name}
+Email: ${formDataObj.email}
+Company: ${formDataObj.company}
+Service Type: ${formDataObj.service_type}
+Message: ${formDataObj.message}`;
                 
+                const mailtoLink = `mailto:derekp927@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                
+                // Show fallback message
+                formStatus.innerHTML = `
+                    <div class="info-message">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Email service not configured yet. Please copy your message and send it directly:</p>
+                        <a href="${mailtoLink}" class="btn btn-secondary" style="margin-top: 10px;">
+                            <i class="fas fa-envelope"></i> Send Email
+                        </a>
+                        <p style="margin-top: 10px; font-size: 0.9em;">
+                            Or contact us at: <strong>derekp927@icloud.com</strong>
+                        </p>
+                    </div>
+                `;
+                formStatus.style.display = 'block';
+                formStatus.className = 'form-status info';
+                
+                // Reset button
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                
+                // Hide message after delay
                 setTimeout(() => {
+                    formStatus.style.display = 'none';
+                }, 10000);
+                
+                return;
+            }
+            
+            // Initialize EmailJS if not already done
+            if (typeof emailjs !== 'undefined' && window.emailjsPublicKey) {
+                emailjs.init(window.emailjsPublicKey);
+            }
+            
+            // Prepare template parameters
+            const templateParams = {
+                from_name: formDataObj.name,
+                from_email: formDataObj.email,
+                company: formDataObj.company,
+                service_type: formDataObj.service_type,
+                message: formDataObj.message,
+                to_email: 'derekp927@icloud.com',
+                reply_to: formDataObj.email
+            };
+            
+            // Send both emails using EmailJS
+            const sendConsultationEmail = emailjs.send(window.emailjsServiceId, window.emailjsTemplateId, templateParams);
+            const sendConfirmationEmail = emailjs.send(window.emailjsServiceId, window.emailjsClientTemplateId, templateParams);
+            
+            // Wait for both emails to complete
+            Promise.all([sendConsultationEmail, sendConfirmationEmail])
+                .then(function(responses) {
+                    console.log('BOTH EMAILS SENT SUCCESSFULLY!', responses);
+                    
+                    // Show success message
+                    formStatus.innerHTML = '<div class="success-message"><i class="fas fa-check-circle"></i> Consultation sent successfully! Check your email for confirmation. We\'ll get back to you within 24 hours.</div>';
+                    formStatus.style.display = 'block';
+                    formStatus.className = 'form-status success';
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Reset button after delay
+                    setTimeout(() => {
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                        formStatus.style.display = 'none';
+                    }, 5000);
+                    
+                }, function(error) {
+                    console.log('EMAIL SENDING FAILED...', error);
+                    
+                    // Show detailed error message
+                    formStatus.innerHTML = `
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <p>Failed to send consultation. Error: ${error.text || error.message || 'Unknown error'}</p>
+                            <p style="margin-top: 10px; font-size: 0.9em;">
+                                Please try again or contact us directly at: <strong>derekp927@icloud.com</strong>
+                            </p>
+                        </div>
+                    `;
+                    formStatus.style.display = 'block';
+                    formStatus.className = 'form-status error';
+                    
+                    // Reset button
                     submitButton.textContent = originalText;
                     submitButton.disabled = false;
-                    submitButton.style.background = '';
-                }, 3000);
-            }, 2000);
+                    
+                    // Hide error message after delay
+                    setTimeout(() => {
+                        formStatus.style.display = 'none';
+                    }, 8000);
+                });
         });
     }
 
@@ -153,10 +265,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // }
 
     // Counter animation for stats
-    function animateCounter(element, target, duration = 2000) {
+    function animateCounter(element, target, originalText, duration = 2000) {
         const start = 0;
         const increment = target / (duration / 16);
         let current = start;
+        
+        // Extract the symbol from original text (+, %, etc.)
+        const symbol = originalText.replace(/\d/g, '');
         
         const timer = setInterval(() => {
             current += increment;
@@ -164,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 current = target;
                 clearInterval(timer);
             }
-            element.textContent = Math.floor(current) + '+';
+            element.textContent = Math.floor(current) + symbol;
         }, 16);
     }
 
@@ -178,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const number = parseInt(text.replace(/\D/g, ''));
                 
                 if (number) {
-                    animateCounter(element, number);
+                    animateCounter(element, number, text);
                     statsObserver.unobserve(element);
                 }
             }
@@ -383,7 +498,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const languageSwitcher = document.getElementById('languageSwitcher');
     const mobileLanguageSwitcher = document.getElementById('mobileLanguageSwitcher');
     const currentLangSpan = document.querySelector('.current-lang');
-    let currentLanguage = 'es'; // Default to Spanish
+    let currentLanguage = 'en'; // Default to English
     
     // Language content mapping
     const languageContent = {
@@ -414,10 +529,10 @@ document.addEventListener('DOMContentLoaded', function() {
             'about-feature2-desc': 'Estrategias adaptadas a cada cliente',
             'about-feature3-title': 'Resultados Medibles',
             'about-feature3-desc': 'Crecimiento comprobado y sostenible',
-            'about-stat1': '15+',
+            'about-stat1': '20+',
             'about-stat1-label': 'Años de Experiencia',
             'about-stat2': '50+',
-            'about-stat2-label': 'Empresas Transformadas',
+            'about-stat2-label': 'Negocios Transformados',
             'about-stat3': '95%',
             'about-stat3-label': 'Satisfacción del Cliente',
             
@@ -537,7 +652,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'about-feature2-desc': 'Strategies tailored to each client',
             'about-feature3-title': 'Measurable Results',
             'about-feature3-desc': 'Proven and sustainable growth',
-            'about-stat1': '15+',
+            'about-stat1': '20+',
             'about-stat1-label': 'Years of Experience',
             'about-stat2': '50+',
             'about-stat2-label': 'Companies Transformed',
@@ -652,24 +767,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Update page content
-        Object.keys(languageContent[lang]).forEach(key => {
-            const element = document.querySelector(`[data-lang="${key}"]`);
-            if (element) {
-                if (element.tagName === 'INPUT' && element.type === 'submit') {
-                    element.value = languageContent[lang][key];
-                } else {
-                    element.innerHTML = languageContent[lang][key];
-                }
-            }
-        });
+        // DISABLED: Update page content - Commented out for direct HTML editing
+        // Object.keys(languageContent[lang]).forEach(key => {
+        //     const element = document.querySelector(`[data-lang="${key}"]`);
+        //     if (element) {
+        //         if (element.tagName === 'INPUT' && element.type === 'submit') {
+        //             element.value = languageContent[lang][key];
+        //         } else {
+        //             element.innerHTML = languageContent[lang][key];
+        //         }
+        //     }
+        // });
         
         // Store language preference
         localStorage.setItem('preferredLanguage', lang);
     }
     
     // Load saved language preference
-    const savedLanguage = localStorage.getItem('preferredLanguage') || 'es';
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
     updateLanguage(savedLanguage);
     
     // Toggle language on button click
