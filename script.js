@@ -767,17 +767,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // DISABLED: Update page content - Commented out for direct HTML editing
-        // Object.keys(languageContent[lang]).forEach(key => {
-        //     const element = document.querySelector(`[data-lang="${key}"]`);
-        //     if (element) {
-        //         if (element.tagName === 'INPUT' && element.type === 'submit') {
-        //             element.value = languageContent[lang][key];
-        //         } else {
-        //             element.innerHTML = languageContent[lang][key];
-        //         }
-        //     }
-        // });
+        // Update page content
+        Object.keys(languageContent[lang]).forEach(key => {
+            const elements = document.querySelectorAll(`[data-lang="${key}"]`);
+            elements.forEach(element => {
+                if (element.tagName === 'INPUT') {
+                    if (element.type === 'submit' || element.type === 'button') {
+                        element.value = languageContent[lang][key];
+                    } else {
+                        element.placeholder = languageContent[lang][key];
+                    }
+                } else if (element.tagName === 'TEXTAREA') {
+                    element.placeholder = languageContent[lang][key];
+                } else if (element.tagName === 'OPTION') {
+                    element.textContent = languageContent[lang][key];
+                } else {
+                    element.innerHTML = languageContent[lang][key];
+                }
+            });
+        });
         
         // Store language preference
         localStorage.setItem('preferredLanguage', lang);
@@ -788,10 +796,12 @@ document.addEventListener('DOMContentLoaded', function() {
     updateLanguage(savedLanguage);
     
     // Toggle language on button click
-    languageSwitcher.addEventListener('click', function() {
-        const newLang = currentLanguage === 'es' ? 'en' : 'es';
-        updateLanguage(newLang);
-    });
+    if (languageSwitcher) {
+        languageSwitcher.addEventListener('click', function() {
+            const newLang = currentLanguage === 'es' ? 'en' : 'es';
+            updateLanguage(newLang);
+        });
+    }
     
     // Toggle language on mobile button click
     if (mobileLanguageSwitcher) {
