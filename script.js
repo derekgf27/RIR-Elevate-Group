@@ -133,7 +133,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Check if EmailJS is configured
             if (!isEmailJSConfigured()) {
                 // Fallback: Show form data and provide contact info
-                console.log('Form submission data:', formDataObj);
                 
                 // Create a mailto link as fallback
                 const subject = `Consultation Request from ${formDataObj.name}`;
@@ -196,7 +195,6 @@ Message: ${formDataObj.message}`;
             // Wait for both emails to complete
             Promise.all([sendConsultationEmail, sendConfirmationEmail])
                 .then(function(responses) {
-                    console.log('BOTH EMAILS SENT SUCCESSFULLY!', responses);
                     
                     // Show success message
                     formStatus.innerHTML = '<div class="success-message"><i class="fas fa-check-circle"></i> Consultation sent successfully! Check your email for confirmation. We\'ll get back to you within 24 hours.</div>';
@@ -214,7 +212,6 @@ Message: ${formDataObj.message}`;
                     }, 5000);
                     
                 }, function(error) {
-                    console.log('EMAIL SENDING FAILED...', error);
                     
                     // Show detailed error message
                     formStatus.innerHTML = `
@@ -520,15 +517,17 @@ document.addEventListener('DOMContentLoaded', function() {
             'btn-services': 'Ver Servicios',
             
             // About Section
-            'about-title': 'Sobre Rafael Irizarry',
-            'about-subtitle': 'Experiencia, Liderazgo y Excelencia Operacional',
-            'about-lead': 'Como consultor especializado en excelencia operacional, hospitalidad y gestión industrial, Rafael Irizarry ha desarrollado una metodología única que transforma negocios y cultiva entornos de crecimiento sostenible.',
-            'about-feature1-title': 'Experiencia Comprobada',
+            'about-title': 'Eng. Rafael Irizarry Rodriguez<br>BSIE, MSEM, LSSBB, LMPC, ACC',
+            'about-subtitle': 'Transformación Empresarial, Liderazgo y Excelencia Operacional',
+            'about-lead': 'Rafael Irizarry es un consultor de transformación empresarial con más de dos décadas de experiencia ayudando a las organizaciones a rediseñar operaciones, liderazgo y crecimiento. Especializado en excelencia operacional, hospitalidad y gestión industrial, combina marcos de nivel corporativo con liderazgo centrado en las personas para convertir la estrategia en ejecución disciplinada en manufactura, salud, aeroespacial, dispositivos médicos e industrias de servicios.',
+            'about-feature1-title': 'Marco Transformacional',
             'about-feature1-desc': 'Años de experiencia en transformación empresarial',
-            'about-feature2-title': 'Enfoque Personalizado',
-            'about-feature2-desc': 'Estrategias adaptadas a cada cliente',
-            'about-feature3-title': 'Resultados Medibles',
-            'about-feature3-desc': 'Crecimiento comprobado y sostenible',
+            'about-feature2-title': 'Estrategia Impulsada por la Ejecución',
+            'about-feature2-desc': 'Traducimos la estrategia en una ejecución disciplinada con propiedad clara y resultados.',
+            'about-feature3-title': 'Liderazgo Multi-Industria',
+            'about-feature3-desc': 'Liderazgo comprobado en manufactura, salud, hospitalidad, aeroespacial y dispositivos médicos.',
+            'about-feature4-title': 'Cambio Centrado en las Personas',
+            'about-feature4-desc': 'Alineamos personas, liderazgo y cultura para sostener la transformación a largo plazo.',
             'about-stat1': '20+',
             'about-stat1-label': 'Años de Experiencia',
             'about-stat2': '50+',
@@ -540,20 +539,23 @@ document.addEventListener('DOMContentLoaded', function() {
             'services-title': 'Servicios',
             'services-subtitle': 'Soluciones integrales para el crecimiento empresarial',
             'service1-title': 'Excelencia Operacional',
-            'service1-desc': 'Optimización de procesos, mejora continua y eficiencia operacional para maximizar la productividad y reducir costos.',
-            'service1-feature1': 'Análisis de procesos',
-            'service1-feature2': 'Implementación de mejoras',
-            'service1-feature3': 'Medición de resultados',
-            'service2-title': 'Hospitalidad',
-            'service2-desc': 'Desarrollo de estrategias de servicio al cliente y experiencias que generen lealtad y crecimiento sostenible.',
-            'service2-feature1': 'Estrategias de servicio',
-            'service2-feature2': 'Experiencias del cliente',
-            'service2-feature3': 'Programas de lealtad',
+            'service1-desc': 'Optimización de procesos, mejora continua y eficiencia operacional para maximizar la productividad, calidad y rendimiento de costos en todas las industrias.',
+            'service1-core-title': '<strong>Servicios principales:</strong>',
+            'service1-feature1': 'Análisis y optimización de procesos',
+            'service1-feature2': 'Implementación de mejora continua (Lean / CI)',
+            'service1-feature3': 'Medición de rendimiento y gestión de KPI',
+            'service2-title': 'Transformación Empresarial',
+            'service2-desc': 'Diseño y ejecución de modelos de negocio escalables, estrategias operativas y transformaciones impulsadas por experiencias que permiten un crecimiento sostenible en todas las industrias.',
+            'service2-core-title': '<strong>Servicios principales:</strong>',
+            'service2-feature1': 'Diseño de modelo de negocio y modelo operativo',
+            'service2-feature2': 'Alineación de estrategia a ejecución',
+            'service2-feature3': 'Gestión del cambio y preparación organizacional',
             'service3-title': 'Gestión Industrial',
-            'service3-desc': 'Optimización de operaciones industriales, gestión de recursos y mejora de procesos de producción.',
-            'service3-feature1': 'Optimización de procesos',
-            'service3-feature2': 'Gestión de recursos',
-            'service3-feature3': 'Control de calidad',
+            'service3-desc': 'Optimización de entornos industriales y operativos mediante gestión efectiva de recursos, sistemas de producción y ejecución impulsada por la calidad.',
+            'service3-core-title': '<strong>Servicios principales:</strong>',
+            'service3-feature1': 'Gestión de producción y operaciones',
+            'service3-feature2': 'Planificación de recursos y capacidad',
+            'service3-feature3': 'Sistemas de calidad y control operacional',
             
             // Elevate Section
             'elevate-title': 'Primeros 3 Pasos para ELEVAR',
@@ -583,17 +585,17 @@ document.addEventListener('DOMContentLoaded', function() {
             'faq-title': 'Preguntas Frecuentes',
             'faq-subtitle': 'Respuestas a las consultas más comunes',
             'faq1-question': '¿Qué servicios de consultoría ofreces?',
-            'faq1-answer': 'Ofrezco consultoría especializada en tres áreas principales: Excelencia Operacional (optimización de procesos y mejora continua), Hospitalidad (desarrollo de estrategias de servicio al cliente), y Gestión Industrial (manufactura, logística y operaciones industriales).',
+            'faq1-answer': 'Me especializo en Transformación Empresarial, Excelencia Operacional y Gestión Industrial. Mis servicios se enfocan en ayudar a las organizaciones a diseñar modelos de negocio escalables, optimizar procesos, alinear estrategia con ejecución y construir equipos de alto rendimiento en múltiples industrias. Trabajo con organizaciones que buscan mejorar la eficiencia, impulsar el crecimiento sostenible y ejecutar cambios con resultados medibles.',
             'faq2-question': '¿Cómo funciona el proceso de consultoría?',
-            'faq2-answer': 'El proceso comienza con una consulta inicial gratuita donde analizamos las necesidades específicas de tu empresa. Luego desarrollamos un plan personalizado, implementamos las mejoras y realizamos un seguimiento continuo para asegurar resultados sostenibles.',
+            'faq2-answer': 'Mi enfoque de consultoría es estructurado, práctico y orientado a resultados. Típicamente incluye: Evaluación y diagnóstico del estado actual; Diseño de estrategia y soluciones alineadas a objetivos empresariales; Apoyo en implementación con ejecución práctica; Medición y seguimiento para asegurar resultados sostenibles. Cada compromiso se adapta a las necesidades, cultura y nivel de madurez de la organización.',
             'faq3-question': '¿Qué tamaño de empresas trabajas?',
-            'faq3-answer': 'Trabajo con empresas de todos los tamaños, desde startups hasta corporaciones establecidas. Mi metodología se adapta a las necesidades específicas de cada organización, independientemente de su tamaño o industria.',
+            'faq3-answer': 'Trabajo con pequeñas y medianas empresas, organizaciones en crecimiento y empresas establecidas. Mi experiencia abarca startups, empresas familiares, universidades, organizaciones sin fines de lucro y organizaciones multinacionales en industrias como manufactura, salud, servicios, educación, energía y entornos impulsados por operaciones.',
             'faq4-question': '¿Cuánto tiempo toma ver resultados?',
-            'faq4-answer': 'Los resultados iniciales suelen ser visibles en las primeras 4-6 semanas, con mejoras significativas en 3-6 meses. El tiempo exacto depende del alcance del proyecto y la complejidad de los cambios implementados.',
+            'faq4-answer': 'Los resultados dependen del alcance y la complejidad del compromiso. Sin embargo, las mejoras tempranas a menudo son visibles dentro de los primeros 30 a 90 días, especialmente en iniciativas de optimización de procesos y alineación operacional. La transformación a largo plazo se enfoca en construir sistemas y capacidades sostenibles con el tiempo.',
             'faq5-question': '¿Ofreces consultoría remota o presencial?',
-            'faq5-answer': 'Ofrezco ambos formatos según las necesidades del proyecto. La consultoría remota es ideal para análisis y planificación, mientras que la presencial es más efectiva para implementación y entrenamiento de equipos.',
+            'faq5-answer': 'Sí. Ofrezco consultoría remota y presencial, dependiendo del alcance del proyecto y la preferencia del cliente. Este enfoque híbrido permite flexibilidad mientras mantiene una colaboración sólida y disciplina de ejecución.',
             'faq6-question': '¿Cómo puedo contactarte para una consulta?',
-            'faq6-answer': 'Puedes contactarme a través del formulario en esta página, por LinkedIn, o Instagram (@rafaelirizarrypr). También puedes enviarme un email directamente. Respondo a todas las consultas dentro de 24 horas.',
+            'faq6-answer': 'Puedes contactarme directamente a través de la sección de Contacto de este sitio web o programar una consulta usando el formulario proporcionado. Estaré encantado de discutir tus desafíos y explorar cómo podemos trabajar juntos.',
             
             // Contact Section
             'contact-title': 'Consulta con un Experto',
@@ -643,15 +645,17 @@ document.addEventListener('DOMContentLoaded', function() {
             'btn-services': 'View Services',
             
             // About Section
-            'about-title': 'About Rafael Irizarry',
-            'about-subtitle': 'Experience, Leadership and Operational Excellence',
-            'about-lead': 'As a consultant specialized in operational excellence, hospitality and industrial management, Rafael Irizarry has developed a unique methodology that transforms businesses and cultivates sustainable growth environments.',
-            'about-feature1-title': 'Proven Experience',
+            'about-title': 'Eng. Rafael Irizarry Rodriguez<br>BSIE, MSEM, LSSBB, LMPC, ACC',
+            'about-subtitle': 'Business Transformation, Leadership & Operational Excellence',
+            'about-lead': 'Rafael Irizarry is a business transformation consultant with over two decades of experience helping organizations redesign operations, leadership, and growth. Specialized in operational excellence, hospitality, and industrial management, he combines corporate-grade frameworks with human-centered leadership to turn strategy into disciplined execution across manufacturing, healthcare, aerospace, medical devices, and service industries.',
+            'about-feature1-title': 'Transformational Framework',
             'about-feature1-desc': 'Years of experience in business transformation',
-            'about-feature2-title': 'Personalized Approach',
-            'about-feature2-desc': 'Strategies tailored to each client',
-            'about-feature3-title': 'Measurable Results',
-            'about-feature3-desc': 'Proven and sustainable growth',
+            'about-feature2-title': 'Execution-Driven Strategy',
+            'about-feature2-desc': 'We translate strategy into disciplined execution with clear ownership and results.',
+            'about-feature3-title': 'Cross-Industry Leadership',
+            'about-feature3-desc': 'Proven leadership across manufacturing, healthcare, hospitality, aerospace, and medical devices.',
+            'about-feature4-title': 'Human-Centered Change',
+            'about-feature4-desc': 'We align people, leadership, and culture to sustain long-term transformation.',
             'about-stat1': '20+',
             'about-stat1-label': 'Years of Experience',
             'about-stat2': '50+',
@@ -663,20 +667,23 @@ document.addEventListener('DOMContentLoaded', function() {
             'services-title': 'Services',
             'services-subtitle': 'Comprehensive solutions for business growth',
             'service1-title': 'Operational Excellence',
-            'service1-desc': 'Process optimization, continuous improvement and operational efficiency to maximize productivity and reduce costs.',
-            'service1-feature1': 'Process analysis',
-            'service1-feature2': 'Improvement implementation',
-            'service1-feature3': 'Results measurement',
-            'service2-title': 'Hospitality',
-            'service2-desc': 'Development of customer service strategies and experiences that generate loyalty and sustainable growth.',
-            'service2-feature1': 'Service strategies',
-            'service2-feature2': 'Customer experiences',
-            'service2-feature3': 'Loyalty programs',
+            'service1-desc': 'Process optimization, continuous improvement, and operational efficiency to maximize productivity, quality, and cost performance across industries.',
+            'service1-core-title': '<strong>Core services:</strong>',
+            'service1-feature1': 'Process analysis & optimization',
+            'service1-feature2': 'Continuous improvement implementation (Lean / CI)',
+            'service1-feature3': 'Performance measurement & KPI management',
+            'service2-title': 'Business Transformation',
+            'service2-desc': 'Design and execution of scalable business models, operating strategies, and experience-driven transformations that enable sustainable growth across industries.',
+            'service2-core-title': '<strong>Core services:</strong>',
+            'service2-feature1': 'Business model & operating model design',
+            'service2-feature2': 'Strategy-to-execution alignment',
+            'service2-feature3': 'Change management & organizational readiness',
             'service3-title': 'Industrial Management',
-            'service3-desc': 'Optimization of industrial operations, resource management and production process improvement.',
-            'service3-feature1': 'Process optimization',
-            'service3-feature2': 'Resource management',
-            'service3-feature3': 'Quality control',
+            'service3-desc': 'Optimization of industrial and operational environments through effective resource management, production systems, and quality-driven execution.',
+            'service3-core-title': '<strong>Core services:</strong>',
+            'service3-feature1': 'Production & operations management',
+            'service3-feature2': 'Resource and capacity planning',
+            'service3-feature3': 'Quality systems & operational control',
             
             // Elevate Section
             'elevate-title': 'First 3 Steps to ELEVATE',
@@ -706,15 +713,15 @@ document.addEventListener('DOMContentLoaded', function() {
             'faq-title': 'Frequently Asked Questions',
             'faq-subtitle': 'Answers to the most common inquiries',
             'faq1-question': 'What consulting services do you offer?',
-            'faq1-answer': 'I offer specialized consulting in three main areas: Operational Excellence (process optimization and continuous improvement), Hospitality (customer service strategy development), and Industrial Management (manufacturing, logistics and industrial operations).',
+            'faq1-answer': 'I specialize in Business Transformation, Operational Excellence, and Industrial Management. My services focus on helping organizations design scalable business models, optimize processes, align strategy with execution, and build high-performing teams across multiple industries. I work with organizations looking to improve efficiency, drive sustainable growth, and execute change with measurable results.',
             'faq2-question': 'How does the consulting process work?',
-            'faq2-answer': 'The process begins with a free initial consultation where we analyze the specific needs of your company. Then we develop a personalized plan, implement improvements and conduct continuous follow-up to ensure sustainable results.',
+            'faq2-answer': 'My consulting approach is structured, practical, and results-driven. It typically includes: Assessment & diagnosis of the current state; Strategy and solution design aligned to business objectives; Implementation support with hands-on execution; Measurement and follow-up to ensure sustainable results. Each engagement is tailored to the organization\'s needs, culture, and level of maturity.',
             'faq3-question': 'What size companies do you work with?',
-            'faq3-answer': 'I work with companies of all sizes, from startups to established corporations. My methodology adapts to the specific needs of each organization, regardless of size or industry.',
+            'faq3-answer': 'I work with small and medium-sized businesses, growing organizations, and established enterprises. My experience spans startups, family-owned businesses, universities, nonprofits, and multinational organizations across industries such as manufacturing, healthcare, services, education, energy, and operations-driven environments.',
             'faq4-question': 'How long does it take to see results?',
-            'faq4-answer': 'Initial results are usually visible in the first 4-6 weeks, with significant improvements in 3-6 months. The exact time depends on the scope of the project and the complexity of the changes implemented.',
+            'faq4-answer': 'Results depend on the scope and complexity of the engagement. However, early improvements are often visible within the first 30 to 90 days, especially in process optimization and operational alignment initiatives. Long-term transformation focuses on building sustainable systems and capabilities over time.',
             'faq5-question': 'Do you offer remote or in-person consulting?',
-            'faq5-answer': 'I offer both formats according to project needs. Remote consulting is ideal for analysis and planning, while in-person is more effective for implementation and team training.',
+            'faq5-answer': 'Yes. I offer both remote and in-person consulting, depending on the project scope and client preference. This hybrid approach allows flexibility while maintaining strong collaboration and execution discipline.',
             'faq6-question': 'How can I contact you for a consultation?',
             'faq6-answer': 'You can contact me through the form on this page, LinkedIn, or Instagram (@rafaelirizarrypr). You can also send me an email directly. I respond to all inquiries within 24 hours.',
             
