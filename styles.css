@@ -212,7 +212,7 @@ p {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(180deg, var(--gray-medium) 60%, var(--black) 100%);
+    background: linear-gradient(180deg, var(--gray-medium) 0%, var(--gray-medium) 40%, var(--black) 100%);
     display: flex;
     align-items: center;
     position: relative;
@@ -394,7 +394,7 @@ section {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .lead {
@@ -440,6 +440,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-top: 8rem;
 }
 
 .stat {
@@ -468,7 +469,7 @@ section {
 
 /* Services Section */
 .services {
-    background: linear-gradient(180deg, var(--black) 0%, var(--primary-blue) 100%);
+    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--primary-blue) 10%, var(--black) 90%, var(--black) 100%);
 }
 
 .services-grid {
@@ -577,7 +578,7 @@ section {
 
 /* Elevate Steps Section */
 .elevate-steps {
-    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--black) 100%);
+    background: linear-gradient(180deg, var(--black) 0%, var(--black) 10%, var(--primary-blue) 90%, var(--primary-blue) 100%);
     color: var(--white);
     position: relative;
     overflow: hidden;
@@ -720,9 +721,155 @@ section {
     box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
 }
 
+/* Testimonials Section */
+.testimonials {
+    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--primary-blue) 10%, var(--black) 90%, var(--black) 100%);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.testimonials-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.testimonial-card {
+    flex: 1 1 0;
+    min-width: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                opacity 0.4s ease,
+                z-index 0.4s ease;
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* Hover effect - elevate the hovered card */
+.testimonial-card:hover {
+    transform: translateY(-25px) scale(1.08);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    opacity: 1;
+}
+
+/* Dim other cards when one is hovered */
+.testimonials-grid:hover .testimonial-card:not(:hover) {
+    opacity: 0.7;
+    transform: translateY(0) scale(1);
+}
+
+.testimonial-avatar {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--white);
+}
+
+.testimonial-avatar i {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gray-medium);
+    border: 4px solid var(--gray-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--gray-dark);
+}
+
+.testimonial-content {
+    background: var(--primary-blue);
+    padding: 2.5rem;
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+}
+
+.testimonial-quote {
+    position: relative;
+    flex: 1;
+}
+
+.quote-mark {
+    position: absolute;
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--brand-yellow);
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.quote-open {
+    top: -20px;
+    left: 0;
+}
+
+.quote-close {
+    bottom: -40px;
+    right: 10px;
+    transform: rotate(180deg);
+}
+
+.testimonial-quote p {
+    color: var(--white);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Tablet styles for testimonials */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .testimonials-grid {
+        flex-wrap: wrap;
+    }
+    
+    .testimonial-card {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: none;
+    }
+}
+
 /* FAQ Section */
 .faq {
-    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--black) 100%);
+    background: linear-gradient(180deg, var(--black) 0%, var(--black) 10%, var(--primary-blue) 90%, var(--primary-blue) 100%);
     color: var(--white);
 }
 
@@ -795,7 +942,7 @@ section {
 
 /* Content Pillars Section */
 .content-pillars {
-    background: linear-gradient(180deg, var(--black) 0%, var(--primary-blue) 100%);
+    background: linear-gradient(180deg, var(--black) 0%, var(--black) 10%, var(--primary-blue) 90%, var(--primary-blue) 100%);
     position: relative;
     overflow: hidden;
 }
@@ -978,7 +1125,7 @@ section {
 
 /* Contact Section */
 .contact {
-    background: linear-gradient(180deg, var(--black) 0%, var(--primary-blue) 100%);
+    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--primary-blue) 10%, var(--black) 90%, var(--black) 100%);
     color: var(--white);
 }
 
@@ -1347,6 +1494,48 @@ section {
     .step-1, .step-2, .step-3 {
         margin: 0 !important;
         position: relative !important;
+    }
+    
+    .testimonials-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .testimonial-card {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-15px) scale(1.05);
+    }
+    
+    .testimonial-content {
+        padding: 2rem;
+        min-height: 200px;
+    }
+    
+    .testimonial-quote p {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .quote-mark {
+        font-size: 4rem;
+    }
+    
+    .quote-open {
+        top: -15px;
+    }
+    
+    .quote-close {
+        bottom: -30px;
+    }
+    
+    .testimonial-author {
+        font-size: 1rem;
+        margin-top: 1.5rem;
     }
     
     .contact-content {

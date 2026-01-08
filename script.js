@@ -490,6 +490,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Testimonials Hover Functionality - No JavaScript needed, handled by CSS
+
 // Language Switcher Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const languageSwitcher = document.getElementById('languageSwitcher');
@@ -560,12 +562,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Elevate Section
             'elevate-title': 'Primeros 3 Pasos para ELEVAR',
             'elevate-subtitle': 'Los pasos fundamentales para elevar tu negocio al siguiente nivel',
-            'elevate-step1-title': 'Conoce tu Producto',
-            'elevate-step1-desc': 'Comprende profundamente tu producto o servicio, sus fortalezas, debilidades y valor único que ofrece al mercado.',
-            'elevate-step2-title': 'Conoce tu Mercado',
-            'elevate-step2-desc': 'Analiza tu mercado objetivo, identifica necesidades, competencia y oportunidades de crecimiento.',
-            'elevate-step3-title': 'Conoce tu Proceso',
-            'elevate-step3-desc': 'Optimiza tus procesos operativos para maximizar eficiencia, calidad y rentabilidad en cada etapa.',
+            'elevate-step1-title': 'Clarifica Tu Valor',
+            'elevate-step1-desc': 'Definimos tu oferta central, diferenciación única y la propuesta de valor estratégica que impulsa a los clientes a elegirte sobre la competencia.',
+            'elevate-step2-title': 'Valida Tu Mercado',
+            'elevate-step2-desc': 'Analizamos la demanda, mapeamos el panorama competitivo e identificamos las rutas más rentables para un crecimiento sostenible y tracción.',
+            'elevate-step3-title': 'Optimiza Tu Entrega',
+            'elevate-step3-desc': 'Construimos un sistema operativo escalable—refinando procesos, roles y métricas—para maximizar eficiencia, calidad y rentabilidad.',
             
             // Content Pillars Section
             'pillars-title': 'Áreas de Especialización',
@@ -580,6 +582,16 @@ document.addEventListener('DOMContentLoaded', function() {
             'pillar3-item1': 'Filantropía',
             'pillar3-item2': 'Motivación',
             'pillar3-item3': 'Frases inspiradoras',
+            
+            // Testimonials Section
+            'testimonials-title': 'Testimonios',
+            'testimonials-subtitle': 'Resultados reales de líderes que han transformado sus negocios',
+            'testimonial1-text': 'Trabajar con Derek fue un placer absoluto. El sitio web que creó para nuestro negocio superó todas las expectativas. Su atención al detalle y compromiso con la entrega de trabajo de calidad es inigualable.',
+            'testimonial1-author': 'NOMBRE AQUÍ',
+            'testimonial2-text': 'La profesionalidad y experiencia técnica demostrada a lo largo del proyecto fue impresionante. Derek transformó nuestra visión en un sitio web impresionante y funcional que representa perfectamente nuestra marca.',
+            'testimonial2-author': 'NOMBRE AQUÍ',
+            'testimonial3-text': '¡Trabajo excepcional! Derek entregó un sitio web responsivo y moderno que ha mejorado significativamente nuestra presencia en línea. Altamente recomendado para cualquiera que busque servicios de desarrollo web de alta calidad.',
+            'testimonial3-author': 'NOMBRE AQUÍ',
             
             // FAQ Section
             'faq-title': 'Preguntas Frecuentes',
@@ -615,7 +627,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'contact-submit': 'Enviar Consulta',
             
             // Footer Section
-            'footer-description': 'Consultor de Negocios especializado en Excelencia Operacional, Hospitalidad y Gestión Industrial.',
+            'footer-description': '',
             'footer-links-title': 'Enlaces Rápidos',
             'footer-link-about': 'Sobre Mí',
             'footer-link-services': 'Servicios',
@@ -688,12 +700,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Elevate Section
             'elevate-title': 'First 3 Steps to ELEVATE',
             'elevate-subtitle': 'The fundamental steps to elevate your business to the next level',
-            'elevate-step1-title': 'Know Your Product',
-            'elevate-step1-desc': 'Understand deeply your product or service, its strengths, weaknesses and unique value it offers to the market.',
-            'elevate-step2-title': 'Know Your Market',
-            'elevate-step2-desc': 'Analyze your target market, identify needs, competition and growth opportunities.',
-            'elevate-step3-title': 'Know Your Process',
-            'elevate-step3-desc': 'Optimize your operational processes to maximize efficiency, quality and profitability at every stage.',
+            'elevate-step1-title': 'Clarify Your Value',
+            'elevate-step1-desc': 'We define your core offer, unique differentiation, and the strategic value proposition that compels clients to choose you over the competition.',
+            'elevate-step2-title': 'Validate Your Market',
+            'elevate-step2-desc': 'We analyze demand, map the competitive landscape, and identify the most profitable pathways for sustainable growth and traction.',
+            'elevate-step3-title': 'Optimize Your Delivery',
+            'elevate-step3-desc': 'We build a scalable operating system—refining processes, roles, and metrics—to maximize efficiency, quality, and profitability.',
             
             // Content Pillars Section
             'pillars-title': 'Areas of Specialization',
@@ -708,6 +720,16 @@ document.addEventListener('DOMContentLoaded', function() {
             'pillar3-item1': 'Philanthropy',
             'pillar3-item2': 'Motivation',
             'pillar3-item3': 'Inspirational quotes',
+            
+            // Testimonials Section
+            'testimonials-title': 'Testimonials',
+            'testimonials-subtitle': 'Real results from leaders who\'ve transformed their businesses',
+            'testimonial1-text': 'Working with Derek was an absolute pleasure. The website he created for our business exceeded all expectations. His attention to detail and commitment to delivering quality work is unmatched.',
+            'testimonial1-author': 'NAME HERE',
+            'testimonial2-text': 'The professionalism and technical expertise demonstrated throughout the project was impressive. Derek transformed our vision into a stunning, functional website that perfectly represents our brand.',
+            'testimonial2-author': 'NAME HERE',
+            'testimonial3-text': 'Outstanding work! Derek delivered a responsive, modern website that has significantly improved our online presence. Highly recommend for anyone looking for top-quality web development services.',
+            'testimonial3-author': 'NAME HERE',
             
             // FAQ Section
             'faq-title': 'Frequently Asked Questions',
@@ -743,7 +765,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'contact-submit': 'Send Consultation',
             
             // Footer Section
-            'footer-description': 'Business Consultant specialized in Operational Excellence, Hospitality and Industrial Management.',
+            'footer-description': '',
             'footer-links-title': 'Quick Links',
             'footer-link-about': 'About',
             'footer-link-services': 'Services',
