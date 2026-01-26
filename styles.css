@@ -108,7 +108,7 @@ p {
 .logo-icon {
     width: 40px;
     height: 40px;
-    background: var(--primary-blue);
+    background: var(--gray-dark);
     color: var(--white);
     border-radius: 50%;
     display: flex;
@@ -382,7 +382,7 @@ section {
 
 /* About Section */
 .about {
-    background: linear-gradient(180deg, var(--black) 0%, var(--black) 10%, var(--gray-medium) 50%, var(--black) 100%);
+    background: linear-gradient(180deg, var(--black) 0%, var(--black) 20%, var(--gray-medium) 80%, var(--gray-medium) 100%);
     color: var(--white);
     position: relative;
 }
@@ -526,7 +526,7 @@ section {
 
 /* Services Section */
 .services {
-    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--primary-blue) 10%, var(--black) 90%, var(--black) 100%);
+    background: linear-gradient(180deg, var(--black) 0%, var(--black) 20%, var(--gray-medium) 80%, var(--gray-medium) 100%);
 }
 
 .services-grid {
@@ -569,7 +569,7 @@ section {
 .service-header .service-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    background: linear-gradient(180deg, var(--gray-medium) 0%, var(--black) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -635,7 +635,7 @@ section {
 
 /* Elevate Steps Section */
 .elevate-steps {
-    background: linear-gradient(180deg, var(--black) 0%, var(--black) 10%, var(--primary-blue) 90%, var(--primary-blue) 100%);
+    background: linear-gradient(180deg, var(--gray-medium) 0%, var(--gray-medium) 20%, var(--black) 80%, var(--black) 100%);
     color: var(--white);
     position: relative;
     overflow: hidden;
@@ -768,7 +768,7 @@ section {
     right: 20px;
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    background: linear-gradient(135deg, var(--gray-medium) 0%, var(--black) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -780,7 +780,7 @@ section {
 
 /* Testimonials Section */
 .testimonials {
-    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--primary-blue) 10%, var(--black) 90%, var(--black) 100%);
+    background: linear-gradient(180deg, var(--black) 0%, var(--black) 20%, var(--gray-medium) 80%, var(--gray-medium) 100%);
     color: var(--white);
     position: relative;
     overflow: hidden;
@@ -857,7 +857,7 @@ section {
 }
 
 .testimonial-content {
-    background: var(--primary-blue);
+    background: var(--gray-dark);
     padding: 2.5rem;
     position: relative;
     flex: 1;
@@ -926,7 +926,7 @@ section {
 
 /* FAQ Section */
 .faq {
-    background: linear-gradient(180deg, var(--black) 0%, var(--black) 10%, var(--primary-blue) 90%, var(--primary-blue) 100%);
+    background: linear-gradient(180deg, var(--gray-medium) 0%, var(--gray-medium) 20%, var(--black) 80%, var(--black) 100%);
     color: var(--white);
 }
 
@@ -999,20 +999,13 @@ section {
 
 /* Content Pillars Section */
 .content-pillars {
-    background: linear-gradient(180deg, var(--black) 0%, var(--black) 10%, var(--primary-blue) 90%, var(--primary-blue) 100%);
+    background: linear-gradient(180deg, var(--gray-medium) 0%, var(--gray-medium) 20%, var(--black) 80%, var(--black) 100%);
     position: relative;
     overflow: hidden;
 }
 
 .content-pillars::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, rgba(255, 215, 0, 0) 0%, rgba(255, 215, 0, 0.05) 30%, rgba(255, 215, 0, 0.05) 70%, rgba(255, 215, 0, 0) 100%);
-    z-index: 0;
+    display: none;
 }
 
 .pillars-grid {
@@ -1093,7 +1086,7 @@ section {
     width: 80px;
     height: 80px;
     margin: 0 auto 1.5rem;
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    background: linear-gradient(135deg, var(--gray-medium) 0%, var(--black) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1182,7 +1175,7 @@ section {
 
 /* Contact Section */
 .contact {
-    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--primary-blue) 10%, var(--black) 90%, var(--black) 100%);
+    background: linear-gradient(180deg, var(--black) 0%, var(--black) 20%, var(--gray-medium) 80%, var(--gray-medium) 100%);
     color: var(--white);
 }
 
@@ -1219,7 +1212,7 @@ section {
 }
 
 .contact-method:hover {
-    background: var(--secondary-blue);
+    background: var(--gray-medium);
 }
 
 .contact-method i {
