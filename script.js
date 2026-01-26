@@ -1,4 +1,4 @@
-﻿// Rafael Irizarry Website - Interactive JavaScript
+// Rafael Irizarry Website - Interactive JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation Toggle
@@ -344,10 +344,21 @@ Message: ${formDataObj.message}`;
             } else if (platform.includes('instagram')) {
                 window.open('https://instagram.com/rafaelirizarrypr', '_blank');
             } else if (platform.includes('envelope')) {
-                // Scroll to contact form
-                document.querySelector('#contact .contact-form').scrollIntoView({
-                    behavior: 'smooth'
-                });
+                // Scroll to contact form (works for all users, no mail client needed)
+                const contactForm = document.querySelector('#contact .contact-form');
+                if (contactForm) {
+                    contactForm.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Focus on email input after scrolling
+                    setTimeout(() => {
+                        const emailInput = document.querySelector('#contact input[type="email"]');
+                        if (emailInput) {
+                            emailInput.focus();
+                        }
+                    }, 500);
+                }
             }
         });
     });
@@ -622,7 +633,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'contact-service-label': 'Tipo de Consultoría',
             'contact-service-placeholder': 'Tipo de Consultoría',
             'contact-service-operational': 'Excelencia Operacional',
-            'contact-service-hospitality': 'Hospitalidad',
+            'contact-service-transformation': 'Transformación Empresarial',
             'contact-service-industrial': 'Gestión Industrial',
             'contact-service-general': 'Consulta General',
             'contact-message-placeholder': 'Mensaje',
@@ -762,7 +773,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'contact-service-label': 'Type of Consulting',
             'contact-service-placeholder': 'Type of Consulting',
             'contact-service-operational': 'Operational Excellence',
-            'contact-service-hospitality': 'Hospitality',
+            'contact-service-transformation': 'Business Transformation',
             'contact-service-industrial': 'Industrial Management',
             'contact-service-general': 'General Consultation',
             'contact-message-placeholder': 'Message',
