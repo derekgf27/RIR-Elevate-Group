@@ -93,6 +93,64 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Testimonials carousel
+    (function initTestimonialsCarousel() {
+        const carousel = document.querySelector('.testimonials-carousel-wrap');
+        if (!carousel) return;
+        const track = carousel.querySelector('.testimonials-track');
+        const slides = carousel.querySelectorAll('.testimonial-slide');
+        const prevBtn = carousel.querySelector('.testimonials-prev');
+        const nextBtn = carousel.querySelector('.testimonials-next');
+        const dotsContainer = carousel.querySelector('.testimonials-dots');
+        const total = slides.length;
+        if (total === 0) return;
+
+        let currentIndex = 0;
+        let autoplayTimer = null;
+        const AUTOPLAY_MS = 6000;
+
+        function goToSlide(index) {
+            currentIndex = (index % total + total) % total;
+            const offset = -currentIndex * 100;
+            track.style.transform = `translateX(${offset}%)`;
+            dotsContainer.querySelectorAll('.testimonials-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+                dot.setAttribute('aria-selected', i === currentIndex);
+            });
+        }
+
+        function buildDots() {
+            if (!dotsContainer || total <= 0) return;
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'testimonials-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('role', 'tab');
+                dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+                dot.setAttribute('aria-selected', i === 0);
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function startAutoplay() {
+            stopAutoplay();
+            autoplayTimer = setInterval(() => goToSlide(currentIndex + 1), AUTOPLAY_MS);
+        }
+        function stopAutoplay() {
+            if (autoplayTimer) clearInterval(autoplayTimer);
+            autoplayTimer = null;
+        }
+
+        buildDots();
+        if (prevBtn) prevBtn.addEventListener('click', () => { goToSlide(currentIndex - 1); startAutoplay(); });
+        if (nextBtn) nextBtn.addEventListener('click', () => { goToSlide(currentIndex + 1); startAutoplay(); });
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', () => { if (total > 1) startAutoplay(); });
+        if (total > 1) startAutoplay();
+    })();
+
     // Contact form handling with EmailJS
     const contactForm = document.getElementById('consultationForm');
     const formStatus = document.getElementById('formStatus');
@@ -142,7 +200,7 @@ Company: ${formDataObj.company}
 Service Type: ${formDataObj.service_type}
 Message: ${formDataObj.message}`;
                 
-                const mailtoLink = `mailto:derekp927@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                const mailtoLink = `mailto:ririzarryjr@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                 
                 // Show fallback message
                 formStatus.innerHTML = `
@@ -153,7 +211,7 @@ Message: ${formDataObj.message}`;
                             <i class="fas fa-envelope"></i> Send Email
                         </a>
                         <p style="margin-top: 10px; font-size: 0.9em;">
-                            Or contact us at: <strong>derekp927@icloud.com</strong>
+                            Or contact us at: <strong>ririzarryjr@gmail.com</strong>
                         </p>
                     </div>
                 `;
@@ -184,7 +242,7 @@ Message: ${formDataObj.message}`;
                 company: formDataObj.company,
                 service_type: formDataObj.service_type,
                 message: formDataObj.message,
-                to_email: 'derekp927@icloud.com',
+                to_email: 'ririzarryjr@gmail.com',
                 reply_to: formDataObj.email
             };
             
@@ -219,7 +277,7 @@ Message: ${formDataObj.message}`;
                             <i class="fas fa-exclamation-circle"></i>
                             <p>Failed to send consultation. Error: ${error.text || error.message || 'Unknown error'}</p>
                             <p style="margin-top: 10px; font-size: 0.9em;">
-                                Please try again or contact us directly at: <strong>derekp927@icloud.com</strong>
+                                Please try again or contact us directly at: <strong>ririzarryjr@gmail.com</strong>
                             </p>
                         </div>
                     `;
@@ -344,21 +402,7 @@ Message: ${formDataObj.message}`;
             } else if (platform.includes('instagram')) {
                 window.open('https://instagram.com/rafaelirizarrypr', '_blank');
             } else if (platform.includes('envelope')) {
-                // Scroll to contact form (works for all users, no mail client needed)
-                const contactForm = document.querySelector('#contact .contact-form');
-                if (contactForm) {
-                    contactForm.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Focus on email input after scrolling
-                    setTimeout(() => {
-                        const emailInput = document.querySelector('#contact input[type="email"]');
-                        if (emailInput) {
-                            emailInput.focus();
-                        }
-                    }, 500);
-                }
+                window.location.href = 'mailto:ririzarryjr@gmail.com';
             }
         });
     });
@@ -599,12 +643,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Testimonials Section
             'testimonials-title': 'Testimonios',
             'testimonials-subtitle': 'Resultados reales de líderes que han transformado sus negocios',
-            'testimonial1-text': 'Trabajar con Derek fue un placer absoluto. El sitio web que creó para nuestro negocio superó todas las expectativas. Su atención al detalle y compromiso con la entrega de trabajo de calidad es inigualable.',
-            'testimonial1-author': 'NOMBRE AQUÍ',
-            'testimonial2-text': 'La profesionalidad y experiencia técnica demostrada a lo largo del proyecto fue impresionante. Derek transformó nuestra visión en un sitio web impresionante y funcional que representa perfectamente nuestra marca.',
-            'testimonial2-author': 'NOMBRE AQUÍ',
-            'testimonial3-text': '¡Trabajo excepcional! Derek entregó un sitio web responsivo y moderno que ha mejorado significativamente nuestra presencia en línea. Altamente recomendado para cualquiera que busque servicios de desarrollo web de alta calidad.',
-            'testimonial3-author': 'NOMBRE AQUÍ',
+            'testimonial4-text': 'Desde el inicio de nuestro camino como emprendedores, conocer a Rafael Irizarry marcó un antes y un después para COMET. Su mentoría nos dio claridad, enfoque y la confianza para tomar decisiones estratégicas con propósito. Gracias a su acompañamiento, logramos concretar premios y capital semilla, premios de innovación, participar en aceleradores de negocios en Puerto Rico y completar certificaciones de liderazgo corporativo y empresarial. Más que un mentor, ha sido una guía constante que ha fortalecido nuestra visión y nos ha impulsado a crecer y construir un proyecto sólido, con impacto real y sostenible.',
+            'testimonial4-author': 'COMET',
             
             // FAQ Section
             'faq-title': 'Preguntas Frecuentes',
@@ -739,12 +779,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Testimonials Section
             'testimonials-title': 'Testimonials',
             'testimonials-subtitle': 'Real results from leaders who\'ve transformed their businesses',
-            'testimonial1-text': 'Working with Derek was an absolute pleasure. The website he created for our business exceeded all expectations. His attention to detail and commitment to delivering quality work is unmatched.',
-            'testimonial1-author': 'NAME HERE',
-            'testimonial2-text': 'The professionalism and technical expertise demonstrated throughout the project was impressive. Derek transformed our vision into a stunning, functional website that perfectly represents our brand.',
-            'testimonial2-author': 'NAME HERE',
-            'testimonial3-text': 'Outstanding work! Derek delivered a responsive, modern website that has significantly improved our online presence. Highly recommend for anyone looking for top-quality web development services.',
-            'testimonial3-author': 'NAME HERE',
+            'testimonial4-text': 'From the beginning of our journey as entrepreneurs, meeting Rafael Irizarry marked a before and after for COMET. His mentorship gave us clarity, focus, and the confidence to make strategic decisions with purpose. Thanks to his support, we achieved seed capital awards, innovation awards, participation in business accelerators in Puerto Rico, and completed corporate and entrepreneurial leadership certifications. More than a mentor, he has been a constant guide who has strengthened our vision and pushed us to grow and build a solid project with real, sustainable impact.',
+            'testimonial4-author': 'COMET',
             
             // FAQ Section
             'faq-title': 'Frequently Asked Questions',
