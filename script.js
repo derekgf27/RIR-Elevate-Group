@@ -645,6 +645,8 @@ document.addEventListener('DOMContentLoaded', function() {
             'testimonials-subtitle': 'Resultados reales de líderes que han transformado sus negocios',
             'testimonial4-text': 'Desde el inicio de nuestro camino como emprendedores, conocer a Rafael Irizarry marcó un antes y un después para COMET. Su mentoría nos dio claridad, enfoque y la confianza para tomar decisiones estratégicas con propósito. Gracias a su acompañamiento, logramos concretar premios y capital semilla, premios de innovación, participar en aceleradores de negocios en Puerto Rico y completar certificaciones de liderazgo corporativo y empresarial. Más que un mentor, ha sido una guía constante que ha fortalecido nuestra visión y nos ha impulsado a crecer y construir un proyecto sólido, con impacto real y sostenible.',
             'testimonial4-author': 'COMET',
+            'testimonial5-text': 'El taller de Rafy Irizarry brindó a nuestros emprendedores un marco corporativo y estratégico invaluable. Su capacidad para simplificar conceptos financieros y de comunicación preparó a nuestro grupo para presentar con una mentalidad verdaderamente de CEO. Una experiencia de alto nivel.',
+            'testimonial5-byline': '— Valerie Alvarez, Directora de Programa, Centro Sor Isolina Ferré',
             
             // FAQ Section
             'faq-title': 'Preguntas Frecuentes',
@@ -781,6 +783,8 @@ document.addEventListener('DOMContentLoaded', function() {
             'testimonials-subtitle': 'Real results from leaders who\'ve transformed their businesses',
             'testimonial4-text': 'From the beginning of our journey as entrepreneurs, meeting Rafael Irizarry marked a before and after for COMET. His mentorship gave us clarity, focus, and the confidence to make strategic decisions with purpose. Thanks to his support, we achieved seed capital awards, innovation awards, participation in business accelerators in Puerto Rico, and completed corporate and entrepreneurial leadership certifications. More than a mentor, he has been a constant guide who has strengthened our vision and pushed us to grow and build a solid project with real, sustainable impact.',
             'testimonial4-author': 'COMET',
+            'testimonial5-text': 'Rafy Irizarry\'s workshop provided our entrepreneurs with an invaluable corporate and strategic framework. His ability to simplify financial and communication concepts prepared our group to present with a true CEO mindset. A high-level experience.',
+            'testimonial5-byline': '— Valerie Alvarez, Program Director, Centro Sor Isolina Ferré',
             
             // FAQ Section
             'faq-title': 'Frequently Asked Questions',

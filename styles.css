@@ -974,6 +974,13 @@ section {
     z-index: 1;
 }
 
+.testimonial-byline {
+    margin-top: 1.25rem !important;
+    font-size: 0.95rem !important;
+    opacity: 0.9;
+    font-style: italic;
+}
+
 /* Tablet styles for testimonials */
 @media (max-width: 1024px) and (min-width: 769px) {
     .testimonial-featured {
