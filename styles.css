@@ -129,7 +129,7 @@ p {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 3rem;
+    gap: 2.25rem;
 }
 
 .nav-actions {
