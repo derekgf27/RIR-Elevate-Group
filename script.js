@@ -647,6 +647,8 @@ document.addEventListener('DOMContentLoaded', function() {
             'testimonial4-author': 'COMET',
             'testimonial5-text': 'El taller de Rafy Irizarry brindó a nuestros emprendedores un marco corporativo y estratégico invaluable. Su capacidad para simplificar conceptos financieros y de comunicación preparó a nuestro grupo para presentar con una mentalidad verdaderamente de CEO. Una experiencia de alto nivel.',
             'testimonial5-byline': '— Valerie Alvarez, Directora de Programa, Centro Sor Isolina Ferré',
+            'media-title': 'Media',
+            'media-subtitle': 'Mira charlas e ideas de Rafael Irizarry',
             
             // FAQ Section
             'faq-title': 'Preguntas Frecuentes',
@@ -785,6 +787,8 @@ document.addEventListener('DOMContentLoaded', function() {
             'testimonial4-author': 'COMET',
             'testimonial5-text': 'Rafy Irizarry\'s workshop provided our entrepreneurs with an invaluable corporate and strategic framework. His ability to simplify financial and communication concepts prepared our group to present with a true CEO mindset. A high-level experience.',
             'testimonial5-byline': '— Valerie Alvarez, Program Director, Centro Sor Isolina Ferré',
+            'media-title': 'Media',
+            'media-subtitle': 'Watch talks and insights from Rafael Irizarry',
             
             // FAQ Section
             'faq-title': 'Frequently Asked Questions',
